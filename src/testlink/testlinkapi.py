@@ -162,11 +162,7 @@ class TestlinkAPIClient(object):
         """
         argsAPI = {'devKey' : self.devKey,
                 'testcaseid':str(testcaseid)}  
-<<<<<<< HEAD
-        return self._callServer('getTestCaseAttachments', argsAPI)    
-=======
-        return self.server.tl.getTestCaseAttachments(argsAPI)    
->>>>>>> 64bf436b3ec3d5aa38e855439ac621e3007ce909
+        return self.server.tl.getTestCaseAttachments(argsAPI)
 
     def getTestCaseCustomFieldDesignValue(self, testcaseexternalid, version, 
                                      testprojectid, customfieldname, details):
@@ -196,7 +192,7 @@ class TestlinkAPIClient(object):
         if testProjectName is not None:
             argsAPI.update({'testprojectname':str(testProjectName)})
 
-        # Server return can be a list or a dictionnary !
+        # Server return can be a list or a dictionary !
         # This function always return a list
         ret_srv = self._callServer('getTestCaseIDByName', argsAPI)
         if type(ret_srv) == dict:
